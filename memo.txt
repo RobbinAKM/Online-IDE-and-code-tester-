@@ -1,0 +1,31 @@
+<Addded Iframe>
+-for seperation of concern between top and iframe sandbox="" is added.
+-Running codes directly in the top level html is not ideal.
+-Getting code from the front end transpile them and send back to display takes a lot of hops
+-Get the code from front end , transpile them locally and display in iframe
+-srcDoc is used to display html in iframe
+-for better security , event listener is used to communicate between parent(browser) and child (iframe)
+-window.addEventListener('message') for parent / iframe.current.contentWindow.postMessage(result.outputFiles[0].text, "*") for child
+
+
+
+<Added Monaco Editor >
+-"@monaco-editor/react" / need to install monaco-editor seperatly for type definition files
+-customized the component with a bunch of configs (React Side)
+-Monaco Editor is not written in React.(React is just a wrapper)
+-to get into inside codes , option={} is added to the component and configured .
+-got the value inside the editor by calling editorDidMount function with (getValue, monacoEditor) as parameters
+
+
+
+< 2021/9/12 Added code formatting >
+-used prettier and @types/prettier from npm
+-currently set for code format on click
+-used the reference of monacoEditor from CodeEditor function
+-for parser ,used parser-babel for js parsing
+-get the code from the editor , format it and push back into the editor
+-added bulmaswatch for customizing css
+-replace('/\n$/','') replace extra newline at the end of the formatted code with empty string , so that it will not jump to new line after format
+-monaco editor recognizes JSX but does not do any syntax highlighting
+
+ 
