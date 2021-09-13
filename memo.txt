@@ -28,4 +28,5 @@
 -replace('/\n$/','') replace extra newline at the end of the formatted code with empty string , so that it will not jump to new line after format
 -monaco editor recognizes JSX but does not do any syntax highlighting
 
- 
+ <2021/9/13>
+ -Refector Preview component as standalone component (reusable)
