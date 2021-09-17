@@ -30,3 +30,21 @@
 
  <2021/9/13>
  -Refector Preview component as standalone component (reusable)
+ -refector bundler component
+
+
+<2021/9/15>
+-added react-resizable
+-To expand the width across entire screen ,Infinity is used (because width 100% is not accepted )
+
+<2021/9/16>
+-added horizontal constraint Infinity and vertical constraint window.innerHeight*0.9 for vertical
+-But this triggers a problem that the preview window is cut off when the window resizes
+-need to clean up the global (window) event once after it is used in the component (DO NOT FORGET TO WRAP IT IN THE FUNCTION )
+-Added debouncing for better performance in horizontal dragging
+-synchronize width states to avoid jumping effect in horizontal resizing
+-Added debouncing functionality for code execution
+- the browser does not show the text in the preview because we did not configure the execution timeout.
+- wrap the post messsage from the iframe with setTimeout function
+
+ 
