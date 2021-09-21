@@ -47,4 +47,11 @@
 - the browser does not show the text in the preview because we did not configure the execution timeout.
 - wrap the post messsage from the iframe with setTimeout function
 
- 
+<2021/9/21>
+-we could handle the runtime error but we could not handle async(set timeout) runtime error
+-added error event addEventListener(for uncaught error )
+-if we are using try/catch and the error is caught inside catch , the error event listener will not trigger
+-added event.preventDefault inside error event listener to prevent showing error in console
+-added error handling for bundling errors
+-inside bundler/index.ts change wrap the result function with try catch
+-since both result and error returned are strings , to avoid confusion , object is used
