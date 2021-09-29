@@ -55,3 +55,14 @@
 -added error handling for bundling errors
 -inside bundler/index.ts change wrap the result function with try catch
 -since both result and error returned are strings , to avoid confusion , object is used
+
+<2021/9/28>
+-installed @uiw/react-md-editor@2.1.1 for marked down editor
+-created editor-cell for marke down editor
+-apply use state to track editing state
+-if the div is clicked , show the mark down editor
+-if it is clicked outside of the editor(anywhere else)save the content
+-useEffect and event listener is Added
+-use event.target to limit where the touch event is occured
+-override the css in title and w-md-editor classes
+-added state to the text editor(Warning : in onChange we do not have to use e.target.value but instead just accept 'str' as an argument and set the value) 

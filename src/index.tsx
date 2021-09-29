@@ -1,7 +1,13 @@
 import ReactDOM from "react-dom";
 import "bulmaswatch/slate/bulmaswatch.min.css";
 import CodeCell from "./components/code-cell";
+import TextEditor from "./components/text-editor";
 const App = () => {
-  return <CodeCell />;
+  return (
+    <div>
+      <CodeCell />
+      <TextEditor />
+    </div>
+  );
 };
 ReactDOM.render(<App />, document.querySelector("#root"));
