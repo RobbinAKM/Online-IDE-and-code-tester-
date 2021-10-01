@@ -65,4 +65,13 @@
 -useEffect and event listener is Added
 -use event.target to limit where the touch event is occured
 -override the css in title and w-md-editor classes
--added state to the text editor(Warning : in onChange we do not have to use e.target.value but instead just accept 'str' as an argument and set the value) 
+-added state to the text editor(Warning : in onChange we do not have to use e.target.value but instead just accept 'str' as an argument and set the value)
+
+
+<21/10/1>
+-added Redux
+-https://medium.com/@Alserda/readable-ts-enum-actiontypes-in-react-redux-c105fa0a7c9b (action type and redux to read)
+-added combine reducers
+-Do not forget to add return type in root state (reducers/index.ts)
+-export store and reducers . Used index.ts as main exporter from state folder
+-implement functions in action-creators
