@@ -27,13 +27,13 @@ export const delete_cell = (id: string): DELETE_CELL => {
 
 export const insert_cell_before = (
   id: string,
-  type: CellType
+  cellType: CellType
 ): INSERT_CELL_BEFORE => {
   return {
     type: ActionType.INSERT_CELL_BEFORE,
     payload: {
       id,
-      type,
+      type: cellType,
     },
   };
 };
