@@ -94,3 +94,9 @@
 -to get the state inside of the component , just use useTypeSelector(state=>state)
 -create a hook for useDispatch and actionCreators /use bindActionCreators for binding action creators and use useDispatch
 -removed local state from TextEditor and code cell and wired with content from global state
+
+<21/10/7>
+-make an action bar component for moving and deleting cells
+-make interface for the component and wired up with use action
+-used @fortawesome/fontawesome-free for icons
+-for showing action on the right upperside , position must be absolute (where the parent position must be relative in order not to stack them together )

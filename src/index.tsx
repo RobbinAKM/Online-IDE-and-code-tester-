@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import "bulmaswatch/slate/bulmaswatch.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import CodeCell from "./components/code-cell";
 import TextEditor from "./components/text-editor";
 import { Provider } from "react-redux";
