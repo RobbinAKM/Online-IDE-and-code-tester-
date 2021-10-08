@@ -26,7 +26,7 @@ export const delete_cell = (id: string): DELETE_CELL => {
 };
 
 export const insert_cell_before = (
-  id: string,
+  id: string | null,
   cellType: CellType
 ): INSERT_CELL_BEFORE => {
   return {

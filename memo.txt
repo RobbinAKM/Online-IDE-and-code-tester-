@@ -100,3 +100,6 @@
 -make interface for the component and wired up with use action
 -used @fortawesome/fontawesome-free for icons
 -for showing action on the right upperside , position must be absolute (where the parent position must be relative in order not to stack them together )
+
+<21/10/8>
+-possible solutions for showing add cell bar without any opacity (1. change the class name according to the class name / 2. put custom styling / 3.forceVisible={true} if there is no cell)
