@@ -13,6 +13,11 @@
   opacity: 1;
 }
 
+.add-cell:active {
+  opacity: 0 !important;
+  transition: 0s;
+}
+
 .add-cell .divider {
   position: relative;
   top: 50%;

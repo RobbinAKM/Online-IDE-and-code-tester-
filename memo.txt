@@ -103,3 +103,11 @@
 
 <21/10/8>
 -possible solutions for showing add cell bar without any opacity (1. change the class name according to the class name / 2. put custom styling / 3.forceVisible={true} if there is no cell)
+-we will use forceVisible and use as an optional prop(redefined interface as forceVisible?:boolean)
+-currently when the add text is clicked , the add cell bar appers and fade out below
+-to fix this change the css rule as
+.add-cell:active {
+  opacity: 0 !important;
+  transition: 0s;
+}
+when the button is clicked (active), it will transitioned immediately into opacity 0
