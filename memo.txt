@@ -111,3 +111,8 @@
   transition: 0s;
 }
 when the button is clicked (active), it will transitioned immediately into opacity 0
+
+
+<21/10/12>
+-Derived state is a state which mainly depends on props.
+-to avoid derived state we will use useSelector
