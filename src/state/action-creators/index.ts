@@ -6,8 +6,6 @@ import {
   DELETE_CELL,
   MOVE_CELL,
   INSERT_CELL_BEFORE,
-  BUNDLE_START,
-  BUNDLE_COMPLETE,
   Actions,
 } from "../actions";
 import { CellType } from "../cell";

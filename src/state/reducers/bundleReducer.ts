@@ -3,11 +3,13 @@ import { ActionType } from "../action-types";
 import produce from "immer";
 
 interface BundleState {
-  [key: string]: {
-    loading: boolean;
-    code: string;
-    err: string;
-  };
+  [key: string]:
+    | {
+        loading: boolean;
+        code: string;
+        err: string;
+      }
+    | undefined;
 }
 
 const initialBundleState: BundleState = {};

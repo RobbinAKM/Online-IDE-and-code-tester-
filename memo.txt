@@ -116,3 +116,17 @@ when the button is clicked (active), it will transitioned immediately into opaci
 <21/10/12>
 -Derived state is a state which mainly depends on props.
 -to avoid derived state we will use useSelector
+-you cannot use async selector in React Redux by default
+-implement bundle_start(id) and bundle_complete(id,bundle{code,error}) reducers and types
+-bundle state is undefined for a split second , so we need to makes sure to change the interface as undefined too
+-any thing declared or received as a prop and used inside useEffect is needed to add as dependency in useEffect
+
+<21/10/13>
+-currently the dependency added inside useEffect (bundle) makes the bundleing action occurs every 1 second
+-bundle action (came from actions binded with many other actions)is called frequently
+-to solve that issue we use useMemo from redux
+- useMemo is like a useState and useEffect combined together
+
+-currently Preview window is delayed for 1 second , since it is depending on bundleResult to show up
+-to fix this implement extra if statement inside useEffect  if (!bundleResult) return ;
+- eslint-disable-next-line react-hooks/exhaustive-deps (for disabling unwanted warnings )
