@@ -130,3 +130,18 @@ when the button is clicked (active), it will transitioned immediately into opaci
 -currently Preview window is delayed for 1 second , since it is depending on bundleResult to show up
 -to fix this implement extra if statement inside useEffect  if (!bundleResult) return ;
 - eslint-disable-next-line react-hooks/exhaustive-deps (for disabling unwanted warnings )
+
+
+<21/10/16>
+-added a new feature for bundling each cell as combined codes so that each cell can reference to previous cell
+-implemented a logic for combinding all the codes in each cell as one
+-map each cell content and return combined code , break if the newly added cell.id is equal to current cell.id in iterative process
+-now rendering values in iframe needs to call a long querySelector .
+-A new show() function is implemented /added to combinedCodes to give access to all cells
+-for objects to print , use JSON.stringify
+
+showing JSX element
+-need to import React and ReactDOM into bunding process
+-user might import React and ReactDOM manually into the code editor ,that might trigger name collision
+-Rename the import of React and ReactDOM into _React and _ReactDOM and configure the react side(ES build) to accept the new naming convention
+-in ES build bundler side , add jsxFactory:'_React.createElement' , jsxFragment:'_React.Fragment'
