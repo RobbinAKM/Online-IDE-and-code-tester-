@@ -145,3 +145,5 @@ showing JSX element
 -user might import React and ReactDOM manually into the code editor ,that might trigger name collision
 -Rename the import of React and ReactDOM into _React and _ReactDOM and configure the react side(ES build) to accept the new naming convention
 -in ES build bundler side , add jsxFactory:'_React.createElement' , jsxFragment:'_React.Fragment'
+
+-created empty version of show function and used it to display nothing other than inside current cell 

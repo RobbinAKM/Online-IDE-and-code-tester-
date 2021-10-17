@@ -4,7 +4,9 @@ import Preview from "./Preview";
 import Resizable from "./Resizable";
 import { Cell } from "../state";
 import { useAction } from "../hooks/use-actions";
+import { useShowFunc } from "../hooks/use-showFunc";
 import { useTypedSelector } from "../hooks/use-typed-selector";
+
 import "./code-cell.css";
 
 interface CodeCellProps {
@@ -13,40 +15,7 @@ interface CodeCellProps {
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { update_cell, bundle } = useAction();
   const bundleResult = useTypedSelector((state) => state.bundles[cell.id]);
-
-  const combinedCodes = useTypedSelector((state) => {
-    const { order, data } = state.cell;
-    const cells = order.map((id) => data[id]);
-    const combinedCodes = [
-      `
-      import _React from 'react';
-      import _ReactDOM from 'react-dom';
-
-      const root =document.querySelector("#root")
-      const show=(value)=>{
-
-        if (typeof value ==='object'){
-          if(value.$$typeof && value.props){
-            _ReactDOM.render(value,root)
-          }else{
-            root.innerHTML=JSON.stringify(value);
-          }
-        }else{
-          root.innerHTML=value
-        }
-      };
-      `,
-    ];
-    for (let c of cells) {
-      if (c.type === "code") {
-        combinedCodes.push(c.content);
-      }
-      if (c.type === cell.id) {
-        break;
-      }
-    }
-    return combinedCodes;
-  });
+  const combinedCodes = useShowFunc(cell.id);
 
   useEffect(() => {
     if (!bundleResult) {
